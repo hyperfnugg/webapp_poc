@@ -21,9 +21,9 @@ A React + TypeScript + Vite static SPA that renders literal "Hello, world", depl
 ## Steps
 
 - [x] **Verify GitHub remote.** Confirm `origin` points at the GitHub repo; fix or set if the upstream is gone. *(user)* — `origin` → `https://github.com/hyperfnugg/webapp_poc.git`, remote exists and is empty.
-- [ ] **Push existing commits.** `git push -u origin main` to populate the empty remote. *(manual)*
-- [ ] **Scaffold project in repo root.** `npm create vite@latest . -- --template react-ts`, then `npm install`. Merge any scaffold-generated `.gitignore` entries into the existing `.gitignore`.
-- [ ] **Commit: scaffold Vite React-TS project.** *(auto)*
+- [x] **Push existing commits.** `git push -u origin main` to populate the empty remote. *(manual)*
+- [x] **Scaffold project in repo root.** `npm create vite@latest . -- --template react-ts`, then `npm install`. Merge any scaffold-generated `.gitignore` entries into the existing `.gitignore`.
+- [x] **Commit: scaffold Vite React-TS project.** *(auto)*
 - [ ] **Configure Vite base path.** Set `base: '/webapp_poc/'` in `vite.config.ts` so assets resolve under the Pages subpath.
 - [ ] **Replace `App.tsx` with "Hello, world".** Strip the Vite template. Inline styles. No logo, no counter, nothing else.
 - [ ] **Delete template cruft.** `App.css`, `index.css`, `public/vite.svg`, `src/assets/`, React logo references.
