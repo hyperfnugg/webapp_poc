@@ -42,9 +42,9 @@ No workflow changes needed. Firebase is a runtime dep bundled by Vite; web confi
   - `user === null` → sign-in screen: single "Sign in with Google" button. Inline styles.
   - `user` set → placeholder: `Signed in as <displayName>` and a "Sign out" button.
 - [x] **Commit: gate app on Google sign-in.** *(auto)*
-- [ ] **Deploy and verify.** Push triggers the existing Pages workflow; sign in from a phone and a desktop, confirm auth persists across reloads and no sign-in-UI flash. *(user)*
-- [ ] **Move plan to `plans/done/`.** `git mv plans/active/firebase-auth.md plans/done/firebase-auth.md`.
-- [ ] **Commit: complete firebase-auth milestone.** *(auto)*
+- [x] **Deploy and verify.** Push triggers the existing Pages workflow; sign in from a phone and a desktop, confirm auth persists across reloads and no sign-in-UI flash. *(user)* — verified: persistence, sign-out, no flash, phone + desktop all good.
+- [x] **Move plan to `plans/done/`.** `git mv plans/active/firebase-auth.md plans/done/firebase-auth.md`.
+- [x] **Commit: complete firebase-auth milestone.** *(auto)*
 
 ## Done when
 
