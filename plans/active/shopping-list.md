@@ -28,8 +28,8 @@ No workflow changes needed. Firestore SDK is a runtime dep bundled by Vite (expe
 
 ## Steps
 
-- [ ] **Enable Firestore and seed allowlist.** Firebase console → Firestore → create database in `europe-west1`; then add `/config/family` doc with `members` string array. *(user)*
-- [ ] **Write `firestore.rules`** in repo root with shape:
+- [x] **Enable Firestore and seed allowlist.** Firebase console → Firestore → create database in `europe-west1`; then add `/config/family` doc with `members` string array. *(user)*
+- [x] **Write `firestore.rules`** in repo root with shape:
   ```
   rules_version = '2';
   service cloud.firestore {

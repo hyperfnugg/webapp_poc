@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isFamily() {
+      return request.auth != null &&
+             request.auth.token.email in
+               get(/databases/$(database)/documents/config/family).data.members;
+    }
+
+    match /config/family {
+      allow read: if isFamily();
+      allow write: if false;
+    }
+
+    match /items/{itemId} {
+      allow read, write: if isFamily();
+    }
+  }
+}
