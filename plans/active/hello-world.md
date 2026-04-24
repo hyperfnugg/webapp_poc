@@ -28,7 +28,7 @@ A React + TypeScript + Vite static SPA that renders literal "Hello, world", depl
 - [x] **Replace `App.tsx` with "Hello, world".** Strip the Vite template. Inline styles. No logo, no counter, nothing else.
 - [x] **Delete template cruft.** `App.css`, `index.css`, `src/assets/`, `public/icons.svg`. Also updated `index.html` title and dropped the `index.css` import from `main.tsx`. Kept `public/favicon.svg` since it's trivially load-bearing for browser tab identity.
 - [x] **Commit: minimal Hello World app.** *(auto)*
-- [ ] **Add GitHub Actions deploy workflow** at `.github/workflows/deploy.yml`. On push to `main`: checkout, setup Node, `npm ci`, `npm run build`, publish `dist/` via `actions/upload-pages-artifact` + `actions/deploy-pages`.
+- [x] **Add GitHub Actions deploy workflow** at `.github/workflows/deploy.yml`. On push to `main`: checkout, setup Node, `npm ci`, `npm run build`, publish `dist/` via `actions/upload-pages-artifact` + `actions/deploy-pages`.
 - [ ] **Commit: GitHub Pages deploy workflow.** *(manual)* — CI change, review before committing.
 - [ ] **Enable Pages in repo settings.** Source = "GitHub Actions". One-time UI step. *(user)*
 - [ ] **Push to trigger first deploy.** Verify `https://hyperfnugg.github.io/webapp_poc/` renders "Hello, world". *(user)*
