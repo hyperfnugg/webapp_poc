@@ -12,6 +12,16 @@ Multi-step work lives in `plans/active/<kebab-name>.md`. Each plan has scope, ou
 - One plan per milestone. Don't accumulate tiny TODOs here — those belong in conversation or a commit.
 - Don't duplicate plan content in `README.md` or this file.
 
+## Commits
+
+- Frequent, fine-grained commits. Roughly 1–2 prompts or one coherent chunk per commit. Never bundle many changes into one large commit.
+- **Commit points are explicit in plans.** Each plan interleaves commit steps with work steps as checkboxes.
+- Each commit step is tagged `*(auto)*` or `*(manual)*`:
+  - `*(auto)*` — commit without asking once the preceding work steps land.
+  - `*(manual)*` — pause and wait for an explicit "commit" before committing.
+- Default to `*(auto)*` for low-risk routine changes; use `*(manual)*` for anything touching CI, auth, security rules, or user-visible behavior that wants review first.
+- Step ownership (`*(user)*`, `*(auto)*`, `*(manual)*`) goes as an inline tag at the end of each step.
+
 ## Style
 
 - Inline styles in components. No CSS framework, no animations, no transitions, no icon library.
