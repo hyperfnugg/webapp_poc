@@ -29,11 +29,11 @@ A React + TypeScript + Vite static SPA that renders literal "Hello, world", depl
 - [x] **Delete template cruft.** `App.css`, `index.css`, `src/assets/`, `public/icons.svg`. Also updated `index.html` title and dropped the `index.css` import from `main.tsx`. Kept `public/favicon.svg` since it's trivially load-bearing for browser tab identity.
 - [x] **Commit: minimal Hello World app.** *(auto)*
 - [x] **Add GitHub Actions deploy workflow** at `.github/workflows/deploy.yml`. On push to `main`: checkout, setup Node, `npm ci`, `npm run build`, publish `dist/` via `actions/upload-pages-artifact` + `actions/deploy-pages`.
-- [ ] **Commit: GitHub Pages deploy workflow.** *(manual)* — CI change, review before committing.
-- [ ] **Enable Pages in repo settings.** Source = "GitHub Actions". One-time UI step. *(user)*
-- [ ] **Push to trigger first deploy.** Verify `https://hyperfnugg.github.io/webapp_poc/` renders "Hello, world". *(user)*
-- [ ] **Move plan to `plans/done/`.** `git mv plans/active/hello-world.md plans/done/hello-world.md`.
-- [ ] **Commit: complete hello-world milestone.** *(auto)*
+- [x] **Commit: GitHub Pages deploy workflow.** *(manual)* — CI change, review before committing.
+- [x] **Enable Pages in repo settings.** Source = "GitHub Actions". One-time UI step. *(user)*
+- [x] **Push to trigger first deploy.** Verify `https://hyperfnugg.github.io/webapp_poc/` renders "Hello, world". *(user)* — confirmed: HTTP 200, "Hello, world" in the live HTML.
+- [x] **Move plan to `plans/done/`.** `git mv plans/active/hello-world.md plans/done/hello-world.md`.
+- [x] **Commit: complete hello-world milestone.** *(auto)*
 
 ## Done when
 
