@@ -37,11 +37,11 @@ No workflow changes needed. Firebase is a runtime dep bundled by Vite; web confi
   - `signOut()`
   - `useUser()` — hook wrapping `onAuthStateChanged` with `useState` / `useEffect`; returns `{ user, loading }` where `loading` is `true` until the first auth state callback fires.
 - [x] **Commit: initialize Firebase auth module.** *(auto)*
-- [ ] **Gate the app on auth state.** In `App.tsx`, read `useUser()`:
+- [x] **Gate the app on auth state.** In `App.tsx`, read `useUser()`:
   - `loading` → render nothing (avoids flashing the sign-in UI for already-signed-in users before Firebase reads the cached session).
   - `user === null` → sign-in screen: single "Sign in with Google" button. Inline styles.
   - `user` set → placeholder: `Signed in as <displayName>` and a "Sign out" button.
-- [ ] **Commit: gate app on Google sign-in.** *(auto)*
+- [x] **Commit: gate app on Google sign-in.** *(auto)*
 - [ ] **Deploy and verify.** Push triggers the existing Pages workflow; sign in from a phone and a desktop, confirm auth persists across reloads and no sign-in-UI flash. *(user)*
 - [ ] **Move plan to `plans/done/`.** `git mv plans/active/firebase-auth.md plans/done/firebase-auth.md`.
 - [ ] **Commit: complete firebase-auth milestone.** *(auto)*
