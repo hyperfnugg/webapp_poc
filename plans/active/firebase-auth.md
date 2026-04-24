@@ -29,14 +29,14 @@ No workflow changes needed. Firebase is a runtime dep bundled by Vite; web confi
 
 ## Steps
 
-- [ ] **Set up Firebase project.** Create project, register web app, enable Google provider, add authorized domain. *(user)*
-- [ ] **Install Firebase SDK.** `npm install firebase`.
-- [ ] **Create `src/firebase.ts`** — single module, no premature split. Initialize the app with the web config (committed directly; public-by-design for web — security comes from rules and App Check). Export:
+- [x] **Set up Firebase project.** Create project, register web app, enable Google provider, add authorized domain. *(user)* — project `kraftigere`.
+- [x] **Install Firebase SDK.** `npm install firebase`. — firebase `^12.12.1`.
+- [x] **Create `src/firebase.ts`** — single module, no premature split. Initialize the app with the web config (committed directly; public-by-design for web — security comes from rules and App Check). Export:
   - `auth` (the `Auth` instance)
   - `signInWithGoogle()` — uses `signInWithPopup` with `GoogleAuthProvider`. Default; fall back to `signInWithRedirect` only if a phone browser misbehaves.
   - `signOut()`
   - `useUser()` — hook wrapping `onAuthStateChanged` with `useState` / `useEffect`; returns `{ user, loading }` where `loading` is `true` until the first auth state callback fires.
-- [ ] **Commit: initialize Firebase auth module.** *(auto)*
+- [x] **Commit: initialize Firebase auth module.** *(auto)*
 - [ ] **Gate the app on auth state.** In `App.tsx`, read `useUser()`:
   - `loading` → render nothing (avoids flashing the sign-in UI for already-signed-in users before Firebase reads the cached session).
   - `user === null` → sign-in screen: single "Sign in with Google" button. Inline styles.
