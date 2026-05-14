@@ -32,7 +32,7 @@ No workflow changes needed. App Check and AI Logic are runtime deps via Vite. Th
 - [x] **Wire App Check in `src/firebase.ts`** via `initializeAppCheck(app, { provider: new ReCaptchaV3Provider(siteKey), isTokenAutoRefreshEnabled: true })`. Initialize *after* `initializeApp` and *before* any other Firebase service is used.
 - [x] **Add `src/ai.ts`** — single module parallel to `firebase.ts` and `items.ts`. Imports `app` from `firebase.ts`. Initializes `getAI(app, { backend: new GoogleAIBackend() })` and a model via `getGenerativeModel(ai, { model: 'gemini-2.5-flash' })`. Exports `generate(prompt: string): Promise<string>` returning the response text. Keep generic — no fun-fact-specific logic in this module.
 - [ ] **Commit: App Check + AI module.** *(manual)* — touches auth/security wiring and turns on billed services, review before committing.
-- [ ] **Fun-fact UI on bottom-most unchecked item.**
+- [x] **Fun-fact UI on bottom-most unchecked item.**
   - Compute `lastUnchecked = items.findLast(i => !i.checked)`.
   - Render a "Fun fact" button next to that item's remove button only.
   - Local state in `App` (or `List`): `{ itemId, text, loading } | null` for the current fact.
@@ -40,7 +40,7 @@ No workflow changes needed. App Check and AI Logic are runtime deps via Vite. Th
   - Display text inline below the item, slightly dimmed.
   - Clicking the button again regenerates (overwrites).
   - Checking off the item clears the fact.
-- [ ] **Commit: fun-fact button.** *(auto)*
+- [x] **Commit: fun-fact button.** *(auto)*
 - [ ] **Deploy and verify.** Push, then on the live URL: confirm App Check doesn't break sign-in or Firestore; confirm the button only appears on the bottom-most unchecked item; confirm a fun fact appears within a few seconds; confirm checking the item off clears the fact. *(user)*
 - [ ] **Move plan to `plans/done/`.** `git mv plans/active/llm-fun-fact.md plans/done/llm-fun-fact.md`.
 - [ ] **Commit: complete llm-fun-fact milestone.** *(auto)*
