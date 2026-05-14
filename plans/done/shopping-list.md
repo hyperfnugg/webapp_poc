@@ -59,9 +59,9 @@ No workflow changes needed. Firestore SDK is a runtime dep bundled by Vite (expe
   - `authorized === true` → list UI.
 - [x] **List UI.** One input at top for adding an item; below it a list of items with a checkbox and a remove button each. Inline styles. Checked items stay visible but dimmed (so you can un-check if you mis-tapped).
 - [x] **Commit: shopping list CRUD with real-time sync and not-authorized screen.** *(auto)*
-- [ ] **Deploy and verify.** Push, then test with two family accounts on two devices: adds appear on the other within a few seconds; non-allowlisted account gets the not-authorized screen. *(user)*
-- [ ] **Move plan to `plans/done/`.** `git mv plans/active/shopping-list.md plans/done/shopping-list.md`.
-- [ ] **Commit: complete shopping-list milestone.** *(auto)*
+- [x] **Deploy and verify.** Push, then test with two family accounts on two devices: adds appear on the other within a few seconds; non-allowlisted account gets the not-authorized screen. *(user)* — verified: real-time sync across devices, not-authorized screen for non-allowlisted accounts.
+- [x] **Move plan to `plans/done/`.** `git mv plans/active/shopping-list.md plans/done/shopping-list.md`.
+- [x] **Commit: complete shopping-list milestone.** *(auto)*
 
 ## Done when
 
