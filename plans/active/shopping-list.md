@@ -46,19 +46,19 @@ No workflow changes needed. Firestore SDK is a runtime dep bundled by Vite (expe
   ```
   `get()` in rules costs one doc read per evaluation — negligible at family scale.
 - [ ] **Commit: Firestore security rules.** *(manual)* — security rules, review before committing.
-- [ ] **Deploy rules.** Paste `firestore.rules` into Firebase console → Firestore → Rules, publish. *(user)*
-- [ ] **Create `src/items.ts`** — single module parallel to `src/firebase.ts`. Imports `auth` from `firebase.ts` and initializes `db` via `getFirestore(app)` (export `app` from `firebase.ts` if not already). Exports:
+- [x] **Deploy rules.** Paste `firestore.rules` into Firebase console → Firestore → Rules, publish. *(user)*
+- [x] **Create `src/items.ts`** — single module parallel to `src/firebase.ts`. Imports `auth` from `firebase.ts` and initializes `db` via `getFirestore(app)` (export `app` from `firebase.ts` if not already). Exports:
   - `addItem(text)` — `addDoc` with `{ text, checked: false, createdAt: serverTimestamp() }`.
   - `toggleItem(id, checked)` — `updateDoc`.
   - `removeItem(id)` — `deleteDoc`.
   - `useItems()` — hook wrapping `onSnapshot` on `/items` ordered by `createdAt` **ascending** (oldest first; matches a handwritten list). Returns `{ items, loading }`; `loading` stays `true` until first snapshot fires.
   - `useAuthorized()` — hook that, once `user` is set, calls `getDoc(doc(db, 'config/family'))`. Returns `{ authorized, loading }` where success → `true`, permission-denied → `false`. Single targeted check.
-- [ ] **Gate App.tsx on authorization** after sign-in:
+- [x] **Gate App.tsx on authorization** after sign-in:
   - `user` set, `authorized.loading` → render nothing.
   - `authorized === false` → not-authorized screen: "Not authorized — ask a family member to add your Google account" + sign-out button.
   - `authorized === true` → list UI.
-- [ ] **List UI.** One input at top for adding an item; below it a list of items with a checkbox and a remove button each. Inline styles. Checked items stay visible but dimmed (so you can un-check if you mis-tapped).
-- [ ] **Commit: shopping list CRUD with real-time sync and not-authorized screen.** *(auto)*
+- [x] **List UI.** One input at top for adding an item; below it a list of items with a checkbox and a remove button each. Inline styles. Checked items stay visible but dimmed (so you can un-check if you mis-tapped).
+- [x] **Commit: shopping list CRUD with real-time sync and not-authorized screen.** *(auto)*
 - [ ] **Deploy and verify.** Push, then test with two family accounts on two devices: adds appear on the other within a few seconds; non-allowlisted account gets the not-authorized screen. *(user)*
 - [ ] **Move plan to `plans/done/`.** `git mv plans/active/shopping-list.md plans/done/shopping-list.md`.
 - [ ] **Commit: complete shopping-list milestone.** *(auto)*
